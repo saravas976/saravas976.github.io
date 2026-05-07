@@ -1,0 +1,568 @@
+<!DOCTYPE html>
+<html lang="ru">
+<head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <title>Saravas Games — официальный сайт</title>
+    <meta name="description" content="Официальный сайт Saravas Games: мобильные игры, поддержка и политики конфиденциальности." />
+    <link rel="icon" type="image/svg+xml" href="data:image/svg+xml,%3Csvg%20xmlns%3D%27http%3A//www.w3.org/2000/svg%27%20viewBox%3D%270%200%2064%2064%27%3E%0A%3Cdefs%3E%3ClinearGradient%20id%3D%27g%27%20x1%3D%270%27%20y1%3D%270%27%20x2%3D%271%27%20y2%3D%271%27%3E%3Cstop%20stop-color%3D%27%23ffd66b%27/%3E%3Cstop%20offset%3D%271%27%20stop-color%3D%27%239b6cff%27/%3E%3C/linearGradient%3E%3C/defs%3E%0A%3Crect%20width%3D%2764%27%20height%3D%2764%27%20rx%3D%2718%27%20fill%3D%27url%28%23g%29%27/%3E%0A%3Ctext%20x%3D%2732%27%20y%3D%2739%27%20font-family%3D%27Arial%2Csans-serif%27%20font-size%3D%2724%27%20font-weight%3D%27900%27%20text-anchor%3D%27middle%27%20fill%3D%27%23231006%27%3ESG%3C/text%3E%0A%3C/svg%3E" />
+
+    <style>
+        * {
+            box-sizing: border-box;
+        }
+
+        html {
+            scroll-behavior: smooth;
+        }
+
+        body {
+            margin: 0;
+            min-height: 100vh;
+            font-family: Arial, sans-serif;
+            color: #f8f2ff;
+            background:
+                radial-gradient(circle at 15% 10%, rgba(155, 108, 255, 0.35), transparent 30%),
+                radial-gradient(circle at 85% 12%, rgba(116, 233, 255, 0.18), transparent 30%),
+                radial-gradient(circle at 50% 100%, rgba(255, 142, 232, 0.16), transparent 34%),
+                linear-gradient(180deg, #080412 0%, #150826 48%, #210b37 100%);
+            line-height: 1.65;
+        }
+
+        a {
+            color: #74e9ff;
+            text-decoration: none;
+        }
+
+        a:hover {
+            text-decoration: underline;
+        }
+
+        .page {
+            width: min(100%, 1120px);
+            margin: 0 auto;
+            padding: 22px 16px 70px;
+        }
+
+        .nav {
+            display: flex;
+            align-items: center;
+            justify-content: space-between;
+            gap: 14px;
+            margin-bottom: 18px;
+            padding: 12px 16px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            border-radius: 999px;
+            background: rgba(255, 255, 255, 0.06);
+        }
+
+        .brand {
+            display: flex;
+            align-items: center;
+            gap: 10px;
+            color: #ffd66b;
+            font-weight: bold;
+        }
+
+        .logo {
+            width: 34px;
+            height: 34px;
+            border-radius: 50%;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #ffd66b, #9b6cff);
+            box-shadow: 0 0 24px rgba(255, 214, 107, 0.25);
+            color: #231006;
+            font-size: 12px;
+            font-weight: 900;
+            letter-spacing: -1px;
+        }
+
+        .nav-links {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px 16px;
+            font-size: 14px;
+        }
+
+        .nav-links a,
+        .nav-links span {
+            color: #cfc3dc;
+        }
+
+        .nav-links span {
+            cursor: default;
+            opacity: 0.82;
+        }
+
+        .hero {
+            border-radius: 30px;
+            border: 1px solid rgba(255, 214, 107, 0.24);
+            background: linear-gradient(135deg, rgba(255, 214, 107, 0.13), rgba(155, 108, 255, 0.22));
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.45);
+            padding: 42px 32px;
+            overflow: hidden;
+        }
+
+        .badges {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 10px;
+            margin-bottom: 18px;
+        }
+
+        .badge {
+            display: inline-flex;
+            padding: 8px 14px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.08);
+            font-size: 14px;
+        }
+
+        h1 {
+            margin: 0;
+            color: #ffd66b;
+            font-size: clamp(36px, 7vw, 72px);
+            line-height: 1.02;
+        }
+
+        .subtitle {
+            margin: 18px 0 0;
+            max-width: 760px;
+            color: #cfc3dc;
+            font-size: 18px;
+        }
+
+        .actions {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 26px;
+        }
+
+        .button {
+            display: inline-flex;
+            align-items: center;
+            justify-content: center;
+            min-height: 44px;
+            padding: 11px 18px;
+            border-radius: 999px;
+            font-weight: bold;
+            border: 1px solid rgba(255, 255, 255, 0.12);
+            background: rgba(255, 255, 255, 0.08);
+            color: #f8f2ff;
+        }
+
+        .button.primary {
+            background: linear-gradient(135deg, #ffd66b, #ffb84d);
+            color: #231006;
+        }
+
+        .button.disabled {
+            cursor: default;
+            opacity: 0.65;
+            pointer-events: none;
+        }
+
+        .stats {
+            display: grid;
+            grid-template-columns: repeat(4, 1fr);
+            gap: 14px;
+            margin: 18px 0 28px;
+        }
+
+        .stat, .card, .contact {
+            border-radius: 22px;
+            border: 1px solid rgba(255, 214, 107, 0.18);
+            background: rgba(255, 255, 255, 0.07);
+            box-shadow: 0 24px 80px rgba(0, 0, 0, 0.35);
+            padding: 20px;
+        }
+
+        .stat strong {
+            display: block;
+            color: #ffd66b;
+            font-size: 26px;
+            line-height: 1;
+            margin-bottom: 8px;
+        }
+
+        .stat span, p {
+            color: #cfc3dc;
+        }
+
+        section {
+            margin: 24px 0;
+        }
+
+        h2 {
+            margin: 0 0 12px;
+            color: #ffd66b;
+            font-size: clamp(26px, 4vw, 38px);
+        }
+
+        .games {
+            display: grid;
+            grid-template-columns: repeat(2, 1fr);
+            gap: 16px;
+        }
+
+        .game-top {
+            display: flex;
+            gap: 14px;
+            align-items: center;
+            margin-bottom: 14px;
+        }
+
+        .game-icon {
+            width: 72px;
+            height: 72px;
+            border-radius: 22px;
+            display: grid;
+            place-items: center;
+            background: linear-gradient(135deg, #2a1048, #080412);
+            border: 1px solid rgba(255, 255, 255, 0.14);
+            font-size: 30px;
+        }
+
+        h3 {
+            margin: 0 0 6px;
+            color: #f8f2ff;
+            font-size: 22px;
+        }
+
+        .status {
+            margin: 0;
+            color: #ffd66b;
+            font-size: 13px;
+            font-weight: bold;
+            text-transform: uppercase;
+        }
+
+        .tags {
+            display: flex;
+            flex-wrap: wrap;
+            gap: 8px;
+            margin: 14px 0 18px;
+        }
+
+        .tag {
+            padding: 6px 10px;
+            border-radius: 999px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            background: rgba(255, 255, 255, 0.06);
+            color: #cfc3dc;
+            font-size: 13px;
+        }
+
+        .mini-link {
+            display: inline-flex;
+            margin: 4px 6px 4px 0;
+            padding: 8px 12px;
+            border-radius: 999px;
+            border: 1px solid rgba(116, 233, 255, 0.18);
+            background: rgba(116, 233, 255, 0.08);
+            color: #74e9ff;
+            font-size: 14px;
+        }
+
+        .cards-3 {
+            display: grid;
+            grid-template-columns: repeat(3, 1fr);
+            gap: 16px;
+        }
+
+        .footer {
+            margin-top: 26px;
+            padding: 18px;
+            border-radius: 22px;
+            border: 1px solid rgba(255, 255, 255, 0.10);
+            color: #a99ab9;
+            background: rgba(255, 255, 255, 0.045);
+            text-align: center;
+            font-size: 14px;
+        }
+
+        @media (max-width: 900px) {
+            .nav {
+                align-items: flex-start;
+                border-radius: 24px;
+                flex-direction: column;
+            }
+
+            .stats, .cards-3 {
+                grid-template-columns: repeat(2, 1fr);
+            }
+
+            .games {
+                grid-template-columns: 1fr;
+            }
+        }
+
+        @media (max-width: 560px) {
+            .page {
+                padding: 14px 12px 50px;
+            }
+
+            .hero {
+                padding: 28px 20px;
+                border-radius: 24px;
+            }
+
+            .stats, .cards-3 {
+                grid-template-columns: 1fr;
+            }
+
+            .game-icon {
+                width: 62px;
+                height: 62px;
+                border-radius: 18px;
+            }
+        }
+    </style>
+</head>
+<body>
+<div class="page" id="top">
+    <nav class="nav">
+        <a class="brand" href="#top">
+            <span class="logo" aria-hidden="true">SG</span>
+            <span>Saravas Games</span>
+        </a>
+
+        <div class="nav-links">
+            <a href="#games">Игры</a>
+            <a href="#about">О студии</a>
+            <a href="#privacy">Политики</a>
+            <a href="#contacts">Контакты</a>
+            <span>VK — в разработке</span>
+        </div>
+    </nav>
+
+    <header class="hero">
+        <div class="badges">
+            <span class="badge">🎮 Мобильные игры</span>
+            <span class="badge">✨ Puzzle / Casual / Arcade</span>
+            <span class="badge">📱 Android</span>
+        </div>
+
+        <h1>Saravas Games</h1>
+
+        <p class="subtitle">
+            Официальный сайт разработчика мобильных игр. Здесь собраны проекты Saravas Games,
+            ссылки на политики конфиденциальности, новости и контакты поддержки игроков.
+        </p>
+
+        <div class="actions">
+            <a class="button primary" href="#games">Смотреть игры</a>
+            <a class="button" href="#contacts">Связаться</a>
+        </div>
+    </header>
+
+    <section class="stats">
+        <div class="stat">
+            <strong>4</strong>
+            <span>игровых проекта</span>
+        </div>
+        <div class="stat">
+            <strong>Android</strong>
+            <span>основная платформа</span>
+        </div>
+        <div class="stat">
+            <strong>VK</strong>
+            <span>сообщество в разработке</span>
+        </div>
+        <div class="stat">
+            <strong>Support</strong>
+            <span>поддержка игроков</span>
+        </div>
+    </section>
+
+    <section id="games">
+        <h2>Игры Saravas Games</h2>
+        <p>Ниже находится список текущих и будущих проектов. Названия и ссылки можно обновлять по мере публикации игр.</p>
+
+        <div class="games">
+            <article class="card">
+                <div class="game-top">
+                    <div class="game-icon">💎</div>
+                    <div>
+                        <h3>CrystalSort / Alchemist Water Sort</h3>
+                        <p class="status">В разработке / готовится к публикации</p>
+                    </div>
+                </div>
+
+                <p>
+                    Атмосферная головоломка про сортировку алхимических жидкостей, прокачку профиля,
+                    задания, магазин, дизайн колб и онлайн-рейтинг игроков.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Puzzle</span>
+                    <span class="tag">Water Sort</span>
+                    <span class="tag">Leaderboard</span>
+                    <span class="tag">Android</span>
+                </div>
+
+                <a class="mini-link" href="https://saravas976.github.io/crystalsort-privacy-policy/" target="_blank" rel="noopener">Политика</a>
+                <a class="mini-link" href="#contacts">Поддержка</a>
+                <a class="mini-link" href="#">Google Play — скоро</a>
+                <a class="mini-link" href="#">RuStore — скоро</a>
+            </article>
+
+            <article class="card">
+                <div class="game-top">
+                    <div class="game-icon">🔢</div>
+                    <div>
+                        <h3>2048: Квест плиток</h3>
+                        <p class="status">Опубликовано в RuStore и RuPlay</p>
+                    </div>
+                </div>
+                <p>
+                    Мобильная головоломка в жанре 2048: объединяйте одинаковые плитки,
+                    продумывайте ходы и проходите плиточный квест.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Головоломка</span>
+                    <span class="tag">2048</span>
+                    <span class="tag">Плитки</span>
+                    <span class="tag">Android</span>
+                </div>
+
+                <a class="mini-link" href="https://www.rustore.ru/catalog/app/com.mycompany.Game2048" target="_blank" rel="noopener">Скачать в RuStore</a>
+                <a class="mini-link" href="https://ruplay.market/apps/com.mycompany.Game2048" target="_blank" rel="noopener">Скачать в RuPlay</a>
+                <a class="mini-link" href="https://saravas976.github.io/privacy-policy-2048/" target="_blank" rel="noopener">Политика</a>
+                <a class="mini-link" href="#contacts">Поддержка</a>
+            </article>
+
+            <article class="card">
+                <div class="game-top">
+                    <div class="game-icon">🔗</div>
+                    <div>
+                        <h3>SVYAZ / Связь</h3>
+                        <p class="status">Опубликовано в RuStore и RuPlay</p>
+                    </div>
+                </div>
+                <p>
+                    Логическая головоломка, где нужно находить правильные связи, продумывать ходы
+                    и проходить уровни с постепенно растущей сложностью.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Головоломка</span>
+                    <span class="tag">Связь</span>
+                    <span class="tag">Puzzle</span>
+                    <span class="tag">Android</span>
+                </div>
+
+                <a class="mini-link" href="https://www.rustore.ru/catalog/app/com.example.svyaz" target="_blank" rel="noopener">Скачать в RuStore</a>
+                <a class="mini-link" href="https://ruplay.market/apps/com.example.svyaz" target="_blank" rel="noopener">Скачать в RuPlay</a>
+                <a class="mini-link" href="https://saravas976.github.io/svyaz-privacy-policy/" target="_blank" rel="noopener">Политика</a>
+                <a class="mini-link" href="#contacts">Поддержка</a>
+            </article>
+
+            <article class="card">
+                <div class="game-top">
+                    <div class="game-icon">🚗</div>
+                    <div>
+                        <h3>Neon Dodge / Побег на машине</h3>
+                        <p class="status">Опубликовано в RuStore</p>
+                    </div>
+                </div>
+                <p>
+                    Динамичная аркадная игра про побег на машине: уворачивайтесь от препятствий,
+                    держитесь как можно дольше и проверяйте реакцию в неоновом заезде.
+                </p>
+
+                <div class="tags">
+                    <span class="tag">Аркада</span>
+                    <span class="tag">Машины</span>
+                    <span class="tag">Dodge</span>
+                    <span class="tag">Android</span>
+                </div>
+
+                <a class="mini-link" href="https://www.rustore.ru/catalog/app/com.neondodge.carescape" target="_blank" rel="noopener">Скачать в RuStore</a>
+                <a class="mini-link" href="https://saravas976.github.io/neon-dodge-privacy-policy/" target="_blank" rel="noopener">Политика</a>
+                <a class="mini-link" href="#contacts">Поддержка</a>
+            </article>
+        </div>
+    </section>
+
+    <section id="about">
+        <h2>О Saravas Games</h2>
+        <p>Saravas Games — официальный бренд разработчика мобильных игр Сараваса Николая Эдуардовича.</p>
+
+        <div class="cards-3">
+            <div class="card">
+                <h3>Игры</h3>
+                <p>Разработка мобильных игр для Android: головоломки, казуальные проекты, аркады и экспериментальные механики.</p>
+            </div>
+            <div class="card">
+                <h3>Игроки</h3>
+                <p>Поддержка пользователей, новости, обновления и ответы на вопросы по проектам Saravas Games.</p>
+            </div>
+            <div class="card">
+                <h3>Документы</h3>
+                <p>Публичные политики конфиденциальности и контактная информация для Google Play, RuStore и других площадок.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="privacy">
+        <h2>Политики конфиденциальности</h2>
+        <p>Для каждой игры может быть отдельная политика. Сейчас готовы политики для CrystalSort, 2048: Квест плиток, SVYAZ / Связь и Neon Dodge / Побег на машине.</p>
+
+        <div class="cards-3">
+            <div class="card">
+                <h3>CrystalSort</h3>
+                <p>Политика конфиденциальности CrystalSort / Alchemist Water Sort.</p>
+                <a class="mini-link" href="https://saravas976.github.io/crystalsort-privacy-policy/" target="_blank" rel="noopener">Открыть политику</a>
+            </div>
+            <div class="card">
+                <h3>2048: Квест плиток</h3>
+                <p>Политика конфиденциальности игры 2048: Квест плиток.</p>
+                <a class="mini-link" href="https://saravas976.github.io/privacy-policy-2048/" target="_blank" rel="noopener">Открыть политику</a>
+            </div>
+            <div class="card">
+                <h3>SVYAZ / Связь</h3>
+                <p>Политика конфиденциальности игры SVYAZ / Связь.</p>
+                <a class="mini-link" href="https://saravas976.github.io/svyaz-privacy-policy/" target="_blank" rel="noopener">Открыть политику</a>
+            </div>
+            <div class="card">
+                <h3>Neon Dodge / Побег на машине</h3>
+                <p>Политика конфиденциальности игры Neon Dodge / Побег на машине.</p>
+                <a class="mini-link" href="https://saravas976.github.io/neon-dodge-privacy-policy/" target="_blank" rel="noopener">Открыть политику</a>
+            </div>
+            <div class="card">
+                <h3>Поддержка</h3>
+                <p>По вопросам обработки данных можно написать на почту поддержки Saravas Games.</p>
+            </div>
+        </div>
+    </section>
+
+    <section id="contacts" class="contact">
+        <h2>Контакты</h2>
+        <p>
+            По вопросам поддержки, сотрудничества, публикации игр, удаления данных рейтинга
+            и обработки персональных данных можно связаться с разработчиком.
+        </p>
+
+        <p>
+            <strong>Разработчик:</strong> Саравас Николай Эдуардович<br />
+            <strong>Email:</strong> <a href="mailto:saravas13@yandex.ru">saravas13@yandex.ru</a><br />
+            <strong>Официальное сообщество:</strong> VK — в разработке
+        </p>
+
+        <div class="actions">
+            <a class="button primary" href="mailto:saravas13@yandex.ru">Написать на почту</a>
+            <span class="button disabled">Сообщество VK — в разработке</span>
+        </div>
+    </section>
+
+    <footer class="footer">
+        © Saravas Games. Официальный сайт разработчика мобильных игр.
+    </footer>
+</div>
+</body>
+</html>
